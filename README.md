@@ -1,6 +1,6 @@
 # deployNetlify
 
-A new Flutter project.
+Flutter project test with netlify integration by github actions.
 
 ## Getting Started
 
