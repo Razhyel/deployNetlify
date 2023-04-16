@@ -20,10 +20,10 @@ jobs:
       - run: flutter build web
 
       - name: Deploy to Netlify 🚀
-        uses: data-intuitive/netlify-deploy-site@v1
+        uses: jsmrcaga/action-netlify-deploy@master
         with:
-          auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          site: ${{ secrets.NETLIFY_SITE_ID }}
-          dir: '_site'
-          prod: true
-          message: 'Deploy production ${{ github.ref }}'
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} 
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }} 
+          NETLIFY_DEPLOY_MESSAGE: "${{ github.event.head_commit.message }}"
+          NETLIFY_DEPLOY_TO_PROD: ${{ github.event_name == 'push' && true || false }}
+        
