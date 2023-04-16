@@ -1,4 +1,4 @@
-name: 'Pipeline to Netlify'
+name: 'Pipeline'
 
 on:
   push:
