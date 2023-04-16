@@ -1,5 +1,5 @@
-name: 'Pipeline to Netlify'
-description: 'Automates the build and deployment of Flutter web app on Netlify.'
+name: Pipeline to Netlify
+description: Automates the build and deployment of Flutter web app on Netlify
 
 branding:
   color: blue
