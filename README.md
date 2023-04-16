@@ -1,0 +1,2 @@
+# deployNetlify
+Auto Deploy ~Netlify
