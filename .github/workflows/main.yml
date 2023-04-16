@@ -24,6 +24,6 @@ jobs:
         with:
           auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           site: ${{ secrets.NETLIFY_SITE_ID }}
-          dir: './build/web/'
+          dir: '_site'
           prod: true
           message: 'Deploy production ${{ github.ref }}'
