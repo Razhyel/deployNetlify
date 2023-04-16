@@ -1,0 +1,34 @@
+name: 'Pipeline to Netlify'
+description: 'Automates the build and deployment of Flutter web app on Netlify.'
+
+branding:
+  color: blue
+  icon: code
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Flutter
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - run: flutter pub get
+      - run: flutter test
+      - run: flutter build web
+
+      - name: Deploy to Netlify 🚀
+        uses: data-intuitive/netlify-deploy-site@v1
+        with:
+          auth: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          site: 'lp-teste.netlify.app'
+          dir: './build/web/'
+          prod: true
+          message: 'Deploy production ${{ github.ref }}'
