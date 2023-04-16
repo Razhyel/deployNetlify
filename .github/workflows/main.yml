@@ -20,10 +20,24 @@ jobs:
       - run: flutter build web
 
       - name: Deploy to Netlify 🚀
-        uses: jsmrcaga/action-netlify-deploy@master
+        uses: nwtgck/actions-netlify@v2.0
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }} 
-          NETLIFY_DEPLOY_MESSAGE: "${{ github.event.head_commit.message }}"
-          NETLIFY_DEPLOY_TO_PROD: ${{ github.event_name == 'push' && true || false }}
-          build_directory: './build/web/'
+          publish-dir: './dist'
+          #production-branch: master
+          #github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          #enable-pull-request-comment: false
+          #enable-commit-comment: true
+          #overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+        
+        #uses: jsmrcaga/action-netlify-deploy@master
+       # with:
+         # NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} 
+         # NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }} 
+         # NETLIFY_DEPLOY_MESSAGE: "${{ github.event.head_commit.message }}"
+         # NETLIFY_DEPLOY_TO_PROD: ${{ github.event_name == 'push' && true || false }}
+         # build_directory: './build/web/'
