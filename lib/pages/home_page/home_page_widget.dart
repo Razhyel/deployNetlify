@@ -67,7 +67,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Text(
-                      'Auto Deploy Netlify com Github Actions',
+                      'Auto Deploy Netlify com Github Actions AMARO',
                       style: FlutterFlowTheme.of(context).bodyLarge,
                     ),
                   ],
