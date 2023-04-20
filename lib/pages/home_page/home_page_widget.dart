@@ -67,7 +67,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Text(
-                      'Auto Deploy Netlify com Github Actions AMARO',
+                      'Auto Deploy Netlify com Github Actions',
+                      style: FlutterFlowTheme.of(context).bodyLarge,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      'Cache version 2',
                       style: FlutterFlowTheme.of(context).bodyLarge,
                     ),
                   ],
